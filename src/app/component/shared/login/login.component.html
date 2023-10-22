@@ -1,0 +1,17 @@
+
+<a *ngIf="!isConnected">
+    <a>
+        <a>connectez-vous</a>
+      <input pInputText type="text" class="p-inputtext-sm" placeholder="Email" [(ngModel)]="email" />
+      <input pInputText type="password" class="p-inputtext-sm" placeholder="Mot de passe" [(ngModel)]="pwd" />
+    </a>
+      <p-button (click)="login()" styleClass="p-button-sm">Connexion</p-button>
+      <p-button routerLink="register" styleClass="p-button-secondary p-button-text">S'enregistrer</p-button>
+  
+  </a>
+  <a *ngIf="isConnected">
+    <a id="connect">Vous êtes bien connecté</a>
+    <p-button (click)="logout()" styleClass="p-button-sm p-button-text">Déconnexion</p-button>
+    <p-button  routerLink="../personne" styleClass="p-button-secondary p-button-text">Afficher la liste des membres</p-button>  
+  </a>
+ <hr>

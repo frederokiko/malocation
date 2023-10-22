@@ -1,0 +1,90 @@
+<p-fieldset *ngIf="!isConnected" legend="Enregistrement">
+    <div *ngIf="!registerOk  ; else Ok">
+    <form [formGroup]="fg" (ngSubmit)="onSubmit()">
+        <div>
+            <span class="p-float-label">
+              <input pInputText id="nom" formControlName="nom" />
+              <label htmlFor="nom">Votre nom</label>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input pInputText id="prenom" formControlName="prenom" />
+              <label htmlFor="prenom">Votre prenom</label>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+
+                <p-calendar type="date"id="date_naissance" formControlName="date_naissance" > </p-calendar>           
+                <label for="date_naissance">Date de naissance</label>
+            </span>
+          </div>
+          <div>
+            <span class="p-float-label">
+              <input pInputText id="email" formControlName="email" />
+              <label htmlFor="email">Adresse e-mail</label>
+            </span>
+          </div>
+      <div>
+        <span class="p-float-label">
+          <input pInputText id="nickname" formControlName="nickname" />
+          <label htmlFor="nickname">Votre pseudo</label>
+        </span>
+      </div>
+    
+      <div>
+        <span class="p-float-label">
+          <input pInputText id="password" formControlName="passwd" type="password"/>
+          <label htmlFor="password">Mot de passe</label>
+        </span>
+      </div>
+      <div>
+        <span class="p-float-label">
+          <input pInputText id="confirmpwd" formControlName="confirmpwd" type="password"/>
+          <label htmlFor="confirmpwd">Confirmer mot de passe</label>
+        </span>
+      </div>
+      <div>
+        <span class="p-float-label">
+          <input pInputText id="rue" formControlName="rue" />
+          <label htmlFor="rue">rue</label>
+        </span>
+      </div>
+      <div>
+        <span class="p-float-label">
+          <input pInputText id="numero" formControlName="numero" />
+          <label htmlFor="numero">numero</label>
+        </span>
+      </div>
+      <div>
+        <span class="p-float-label">
+          <input pInputText id="localite" formControlName="localite" />
+          <label htmlFor="localite">Votre localite</label>
+        </span>
+      </div>
+      <div>
+        <span class="p-float-label">
+            <input pInputText id="codepostal" formControlName="codepostal" type="number" min="0" max="9999" />
+            <label for="codepostal">Code postal</label>
+        </span>
+      </div>
+      <div>
+        <span class="p-float-label">
+          <input pInputText id="gsm" formControlName="gsm" />
+          <label htmlFor="gsm">Votre n° gsm</label>
+        </span>
+      </div>
+      <div>
+        <span class="p-float-label">
+          <input pInputText id="telfixe" formControlName="telfixe" />
+          <label htmlFor="telfixe">Votre n° tel fixe</label>
+        </span>
+      </div>
+      <p-button styleClass="p-button-rounded p-button-success" type="submit">Valider</p-button>
+    </form>
+  </div>
+  <ng-template #Ok>
+    <h2>Enregistrement effectué avec succès</h2>
+  </ng-template>
+  </p-fieldset>

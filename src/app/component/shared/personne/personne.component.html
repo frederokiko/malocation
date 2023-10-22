@@ -1,0 +1,14 @@
+<div *ngIf="isConnected"  >
+    <p-button (click)="getall()" styleClass="p-button-sm">Afficher</p-button>
+    <div *ngFor="let pers of listPersonne " >
+        <p>Nom : {{pers.nom}} - Prenom : {{pers.prenom}} -- {{pers.id_personne}}</p>
+        <p> Rue :{{pers.rue}} , N° {{pers.numero}} , CP :{{pers.codepostal}} : {{pers.localite}} .</p>
+        <p>Email : {{pers.email}}</p>
+        <p>{{pers.id_role}} </p>
+        <input pInputText id="roleid" [(ngModel)]="idrole"  min="0" max="5" />
+        <label for="roleid">nouveau role</label>
+        <p-button (click)="setrole(pers.id_personne)" styleClass="p-button-sm">Valider</p-button>
+
+    </div>
+</div>
+

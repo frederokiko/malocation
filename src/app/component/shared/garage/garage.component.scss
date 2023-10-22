@@ -1,0 +1,41 @@
+/* Styles pour les miniatures */
+// .thumbnails {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+  
+//   .thumbnails img {
+//     margin: 5px;
+//     cursor: pointer;
+//     max-width: 100px; /* Ajustez la largeur maximale des miniatures */
+//   }
+  
+//   /* Styles pour les images agrandies */
+//   .enlarged-image {
+//     display: none;
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     z-index: 999;
+//   }
+  
+//   .enlarged-image img {
+//     max-width: 80%; /* Ajustez la largeur maximale de l'image agrandie */
+//   }
+  
+.zoom {
+  height:400px;
+  margin:auto;
+  }
+  .zoom p {
+  text-align:center;
+  }
+  .zoom img {
+  width: 150px;
+  height:112px;
+  }
+  .zoom img:hover {
+  width:600px; //400
+  height:450px; //300
+  } 

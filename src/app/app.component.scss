@@ -1,0 +1,61 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #9c9292; /* Choisissez la couleur de fond que vous préférez */
+    color: #fff; /* Choisissez la couleur du texte que vous préférez */
+    padding: 10px; /* Ajoutez une marge intérieure pour le contenu du footer */
+    text-align: center; /* Alignez le texte au centre */
+  }
+//   .content {
+//     padding-bottom: 60px; /* Ajustez cette valeur en fonction de la hauteur de votre footer */
+//   }
+  /* Styles pour l'en-tête */
+.header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .menu {
+    padding: 0;
+  }
+  
+  .menu li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  /* Styles pour le contenu principal */
+  .content {
+    padding: 20px;
+  }
+  
+  /* Styles pour le pied de page */
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  p {
+    line-height: 1,5; /* Espacement entre les lignes de 1 fois la hauteur de la police */
+  }
+  .center {
+    text-align: center; /* Centre le texte horizontalement */
+    margin-top: 10px; /* Ajoute une marge en haut pour l'espace vertical */
+    margin-bottom: 10px; /* Ajoute une marge en bas pour l'espace vertical */
+  }
+  // body {
+  //   background-image: url('src\assets\photofond\pexels-pixabay-53610.jpg');
+  //   background-size: cover; /* Ajuste la taille de l'image pour couvrir tout l'arrière-plan */
+  //   background-attachment: fixed; /* Fixe l'image en arrière-plan pour qu'elle ne défiler pendant le défilement */
+  //   background-repeat: no-repeat; /* Empêche la répétition de l'image en arrière-plan */
+  //   background-position: center center; /* Centre l'image horizontalement et verticalement */
+  // }
+  

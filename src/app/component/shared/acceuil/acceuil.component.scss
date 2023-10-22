@@ -1,0 +1,13 @@
+ /* Styles pour le contenu principal */
+ .content {
+    padding: 20px;
+  }
+  
+  p {
+    line-height: 1,5; /* Espacement entre les lignes de 1 fois la hauteur de la police */
+  }
+  .center {
+    text-align: center; /* Centre le texte horizontalement */
+    margin-top: 10px; /* Ajoute une marge en haut pour l'espace vertical */
+    margin-bottom: 10px; /* Ajoute une marge en bas pour l'espace vertical */
+  }

@@ -1,0 +1,24 @@
+
+
+    <p>Ici vous trouverez le garage idéal pour votre voiture</p>
+    <p-button (click)="getall()" styleClass="p-button-sm">Afficher</p-button>
+    
+    <div *ngFor="let gar of listgarage">
+      <p>N° : {{gar.id_garage}} : L : {{gar.longueur}} m X l : {{gar.largeur}} m = surface {{gar.surface}} M2 </p>
+      <p-button (click)="getallgar(gar.id_garage)" styleClass="p-button-sm">Afficher</p-button>
+      <div class="zoom">
+        <a *ngFor="let pho of listphotogarage">
+           <img
+            src="{{pho.photos}}"
+            alt="{{pho.nom}}"
+          > 
+        </a>
+      </div>
+    </div>
+    
+    
+    <!-- <input pInputText id="roleid" [(ngModel)]="idrole"  min="0" max="5" />
+    <label for="roleid">nouveau role</label>
+    <p-button (click)="setrole(pers.id_personne)" styleClass="p-button-sm">Valider</p-button> -->
+
+
