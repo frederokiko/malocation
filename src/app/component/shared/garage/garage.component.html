@@ -1,22 +1,67 @@
-
-
     <p>Ici vous trouverez le garage idéal pour votre voiture</p>
+    <div class="container">
+      <div class="left">
+      
     <p-button (click)="getall()" styleClass="p-button-sm">Afficher</p-button>
     
-    <div *ngFor="let gar of listgarage">
-      <p>N° : {{gar.id_garage}} : L : {{gar.longueur}} m X l : {{gar.largeur}} m = surface {{gar.surface}} M2 </p>
-      <p-button (click)="getallgar(gar.id_garage)" styleClass="p-button-sm">Afficher</p-button>
-      <div class="zoom">
-        <a *ngFor="let pho of listphotogarage">
-           <img
-            src="{{pho.photos}}"
-            alt="{{pho.nom}}"
-          > 
+    <div *ngFor="let gar of listgarage ;let i = index">
+      <a>N° : {{i+1}} : L : {{gar.longueur}} m X l : {{gar.largeur}} m = surface {{gar.surface}} m² </a>
+    
+      <p-button (click)="getallgar(gar.id_garage);getbien(gar.id_bien)" styleClass="p-button-sm">Afficher détails</p-button>
+      <!-- <p-button (click)="getbien(gar.id_bien)" styleClass="p-button-sm">Details</p-button> -->
+      <hr>
+      </div>
+      </div>
+      
+      <div class="center">
+        <a class="zoom">
+          <ng-container *ngIf="listphotogarage && listphotogarage.length > 0; else noPhotos">
+            <a *ngFor="let pho of listphotogarage">
+              <img
+                src="{{pho.photos}}"
+                alt="{{pho.nom}}"
+              >
+            </a>
+          </ng-container>
+          <ng-template #noPhotos>
+            <p>IL n'a pas mis de photos , connard : t'es aveugle !</p>
+          </ng-template>
         </a>
+      </div>
+    
+      <div class="right">
+        <div *ngFor="let bi of listbien">
+          <!-- <p>ID du bien : {{ bi.id_bien }}</p> -->
+          <p>Rue : {{ bi.rue }}</p>
+          <p>Numéro : {{ bi.numero }}</p>
+          <p>Code Postal : {{ bi.codepostal }}</p>
+          <p>Localité : {{ bi.localite }}</p>
+          <p>Prix de Location : {{ bi.location_prix }} €</p>
+          <p>Caution : {{ bi.caution_montant }} €</p>
+          <p>Caution Texte : {{ bi.caution_txt }}</p>
+          <p>Disponible le : {{ bi.disponible }}</p>
+          <!-- <p>Est Loué : {{ bi.est_louer }}</p> -->
+          <!-- <p>Est Validé : {{ bi.est_valider }}</p> -->
+          <!-- <p>ID du Propriétaire : {{ bi.id_proprietaire }}</p> -->
+          <!-- <p-button  class="p-button-success">Se proposer à la location</p-button>
+          <p-button  class="p-button-success">Demander une date de visite</p-button>
+          <p-button  class="p-button-success">Contacter un Employé</p-button> -->
+          <button pButton pRipple label="Se proposer à la location" class="p-button-success"></button><br>
+          <button pButton pRipple label="Demander une date de visite" class="p-button-success"></button><br>
+          <button pButton pRipple label="Contacter un Employé" class="p-button-success"></button><br>
+
+        </div>
       </div>
     </div>
     
     
+    
+
+     
+
+   
+  
+
     <!-- <input pInputText id="roleid" [(ngModel)]="idrole"  min="0" max="5" />
     <label for="roleid">nouveau role</label>
     <p-button (click)="setrole(pers.id_personne)" styleClass="p-button-sm">Valider</p-button> -->

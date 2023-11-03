@@ -29,7 +29,17 @@ export class PersonneService {
         private userService: UserService,
        
       ) { }
-    
+      getiduser() : number {
+        let token = localStorage.getItem("token")?? ""
+        let jwt : any = jwt_decode(token)
+        return jwt["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/sid"]
+      }
+      getrole(): string {
+        let token = localStorage.getItem("token")?? ""
+        let jwt : any = jwt_decode(token)
+        return jwt["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]
+      }
+
       login(email: string, pwd: string) {
         this.client.post(this.url + 'Personne/login', { email: email, password: pwd }, { responseType: 'text' }).subscribe({
           next: (token: any) => {

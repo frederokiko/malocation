@@ -24,6 +24,12 @@ import { MaisonComponent } from './component/shared/maison/maison.component';
 import { AddmaisonComponent } from './component/shared/addmaison/addmaison.component';
 import { AddgarageComponent } from './component/shared/addgarage/addgarage.component';
 import  {  NgxImageZoomModule  }  from  'ngx-image-zoom' ;
+import { AccordionModule } from 'primeng/accordion';
+import { CheckboxModule } from 'primeng/checkbox';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { ErreurComponent } from './component/shared/erreur/erreur.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +43,8 @@ import  {  NgxImageZoomModule  }  from  'ngx-image-zoom' ;
     MaisonComponent,
     AddmaisonComponent,
     AddgarageComponent,
+    ErreurComponent,
+  
     
   ],
   imports: [
@@ -54,7 +62,11 @@ import  {  NgxImageZoomModule  }  from  'ngx-image-zoom' ;
     TableModule,
     CardModule,
    CalendarModule,
-   NgxImageZoomModule
+   NgxImageZoomModule,
+   AccordionModule,
+   CheckboxModule,
+   MultiSelectModule,
+   InputTextareaModule,
   ],
   providers: [
     provideAnimations(),

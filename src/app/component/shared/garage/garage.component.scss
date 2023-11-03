@@ -25,17 +25,30 @@
 //   }
   
 .zoom {
-  height:400px;
+  max-height:400px;
   margin:auto;
   }
   .zoom p {
   text-align:center;
   }
   .zoom img {
-  width: 150px;
-  height:112px;
+  min-width: 150px;
+  max-height:112px;
   }
   .zoom img:hover {
-  width:600px; //400
-  height:450px; //300
+  min-width:600px; //400
+  max-height:450px; //300
   } 
+  .container {
+    display: flex; /* Utilisation d'un conteneur flexible pour diviser en trois parties */
+    justify-content: space-between; /* Espacement égal entre les parties */
+    width: 100%; /* Largeur totale de la page */
+  }
+  
+  .left, .center, .right {
+    flex: 1; /* Chacune des parties prendra un tiers de l'espace disponible */
+    padding: 10px; /* Espacement interne optionnel */
+    border: 1px solid #ccc; /* Bordures pour distinguer les parties (optionnel) */
+    box-sizing: border-box; /* Inclure la bordure dans la largeur et la hauteur */
+  }
+  

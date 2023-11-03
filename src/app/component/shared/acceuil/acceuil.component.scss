@@ -11,3 +11,15 @@
     margin-top: 10px; /* Ajoute une marge en haut pour l'espace vertical */
     margin-bottom: 10px; /* Ajoute une marge en bas pour l'espace vertical */
   }
+  .button-container {
+    display: flex;
+   // justify-content: space-between; /* Espace les boutons également */
+    margin-right: 10px; /* Marge entre le dernier bouton et le bord droit du conteneur */
+  }
+  
+  /* Pour ajouter une marge à droite de chaque bouton sauf le dernier */
+  .button-container p-button:not(:last-child) {
+    margin-right: 10px;
+  }
+  
+  

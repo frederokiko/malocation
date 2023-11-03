@@ -1,1 +1,52 @@
-<p>addmaison works!</p>
+<!-- <p-multiSelect [options]="listgenre_piece" [(ngModel)]="id_genre" optionLabel="name"></p-multiSelect> -->
+<div class="container">
+    <div *ngIf="role !='Prop'" class="column">
+        <h2>Pouvoir ajouter des bien à location</h2>
+        <h2>Je suis proprietaire</h2>
+        <!-- personne : <input type="number" [(ngModel)]="id_pers"><br /> -->
+        <!-- <button (click)="addproprio()">Valider</button> -->
+        <p-button (click)="onClickButton1()" [disabled]="button1Clicked" label="Valider" icon="pi pi-check"></p-button>
+        <h3>Vous devrez vous deconnecter et vous reconnecter pour valider les changement!</h3>
+        <hr />
+
+    </div>
+    <div *ngIf="role==='Prop'|| role=='Admin'" class="column">
+        <h2>Ajouter bien</h2>
+        Rue : <input type="text" [(ngModel)]="rue"><br />
+        Numéro : <input type="text" [(ngModel)]="numero"><br />
+        Localité : <input type="text" [(ngModel)]="localite"><br />
+        Code postal : <input type="number" [(ngModel)]="codepostal"><br />
+        En location : <input type="checkbox" [(ngModel)]="est_louer"><br />
+        Prix du loyer : <input type="number" [(ngModel)]="location_prix"><br />
+        Disponible : <input type="date" [(ngModel)]="disponible"><br />
+        Prix des cautions : <input type="number" [(ngModel)]="caution_montant"><br />
+        Commentaire : <br> <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="caution_txt"></textarea>       
+        <br />
+        <!-- proprio : <input type="number" [(ngModel)]="id_proprietaire"><br /> -->
+        <p-button (click)="onClickButton2()"[disabled]="button2Clicked" label="Valider" icon="pi pi-check"></p-button>
+       
+    </div>
+    <div *ngIf="role==='Prop'|| role=='Admin'" class="column">
+        Maison <p-checkbox [(ngModel)]="type_maison" [binary]="true" inputId="maison" (ngModelChange)="onTypeChange('maison')"></p-checkbox><br>
+        Appartement <p-checkbox [(ngModel)]="type_appartement" [binary]="true" inputId="appartement" (ngModelChange)="onTypeChange('appartement')"></p-checkbox><br>
+        
+        Chaufage_central<p-checkbox [(ngModel)]="chaufage_central" [binary]="true" inputId="binary"></p-checkbox><br>
+        Charge_comprise<p-checkbox [(ngModel)]="charge_comprise" [binary]="true" inputId="binary"></p-checkbox><br>
+        <!-- ID bien : <input type="number" [(ngModel)]="id_bienb"><br /> -->
+        <p-button (click)="onClickButton3()" [disabled]="button3Clicked"label="Valider" icon="pi pi-check"></p-button>
+
+    </div>
+    <div *ngIf="role==='Prop'|| role=='Admin'" class="column">
+        Longueur : <input type="number" [(ngModel)]="longueur"><br />
+        Largeur : <input type="number" [(ngModel)]="largeur"><br />
+        <a >Type de pièce</a> 
+        <select [(ngModel)]="selectedGenreId" name="genre">
+            <option *ngFor="let genre of listgenre_piece" [value]="genre.id_genre">{{ genre.nom }}</option>
+          </select> <br>
+          Commentaire : <br> <textarea rows="5" cols="30" pInputTextarea [(ngModel)]="commentaire"></textarea><br />
+          <!-- ID batiment : <input type="number" [(ngModel)]="id_batiment"><br /> -->
+          <p-button (click)="onClickButton4()" [disabled]="button4Clicked"label="Valider" icon="pi pi-check"></p-button>
+          <h2>Ici tu mettra tes photos pourries quand ca marchera !</h2>
+
+    </div>
+  </div>

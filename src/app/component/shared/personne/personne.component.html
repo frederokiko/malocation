@@ -1,4 +1,4 @@
-<div *ngIf="isConnected"  >
+<div *ngIf="isConnected && userRole==='Admin'"  >
     <p-button (click)="getall()" styleClass="p-button-sm">Afficher</p-button>
     <div *ngFor="let pers of listPersonne " >
         <p>Nom : {{pers.nom}} - Prenom : {{pers.prenom}} -- {{pers.id_personne}}</p>
@@ -12,3 +12,4 @@
     </div>
 </div>
 
+<!-- *ngIf="isConnected && userRole==='Admin'"  -->

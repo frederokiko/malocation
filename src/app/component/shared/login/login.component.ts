@@ -10,13 +10,14 @@ export class LoginComponent {
   email!: string
   pwd! : string
   isConnected! : boolean
+  role! : string
 
   constructor(private personneService : PersonneService){}
 
   ngOnInit() {
     this.personneService.statusSubject
         .subscribe({next : (status : boolean)=> this.isConnected = status})
-
+    this.role= this.personneService.getrole()
   }
   login(){
     this.personneService.login(this.email, this.pwd)

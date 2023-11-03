@@ -26,7 +26,7 @@ user: User | null;
 ngOnInit() {
   this.personneService.statusSubject
       .subscribe({next : (status : boolean)=> this.isConnected = status})
-      this.userRole  =(JSON.parse(localStorage.getItem("user") ?? "")).role
+      this.userRole=this.personneService.getrole()
 }
 
 getall(){

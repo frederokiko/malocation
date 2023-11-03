@@ -12,7 +12,6 @@ export interface Personne{
   codepostal : number,
   gsm:string,
   telfixe : string ,
-  id_role :number
-
+  id_role :number,
 }
 //Nom, Prenom, Date_naissance, Email, Nickname, Passwd, Rue, Numero, Localite, Codepostal, Gsm, Telfixe, Id_role

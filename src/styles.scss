@@ -6,15 +6,15 @@
 //     background-repeat: no-repeat; /* Empêche la répétition de l'image en arrière-plan */
 //     background-position: center center; /* Centre l'image horizontalement et verticalement */
 //   }
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #9c9292; /* Choisissez la couleur de fond que vous préférez */
-    color: #fff; /* Choisissez la couleur du texte que vous préférez */
-    padding: 10px; /* Ajoutez une marge intérieure pour le contenu du footer */
-    text-align: center; /* Alignez le texte au centre */
-  }
+// .footer {
+//     position: absolute;
+//     bottom: 0;
+//     width: 100%;
+//     background-color: #9c9292; /* Choisissez la couleur de fond que vous préférez */
+//     color: #fff; /* Choisissez la couleur du texte que vous préférez */
+//     padding: 10px; /* Ajoutez une marge intérieure pour le contenu du footer */
+//     text-align: center; /* Alignez le texte au centre */
+//   }
 //   .content {
 //     padding-bottom: 60px; /* Ajustez cette valeur en fonction de la hauteur de votre footer */
 //   }
@@ -22,5 +22,26 @@
 .header {
     background-color: #333;
     color: #fff;
-    padding: 10px;
+    //padding: 10px;
   }
+  body {
+    padding-bottom: 100px;
+    background-color:rgb(219, 224, 220);
+
+    font-family: "'Times New Roman', serif";
+    margin: 0px;   padding: 0px;
+    font-size: 18px;
+
+    font-weight: normal;
+
+    font-style: oblique;
+
+    font-variant: inherit;
+
+    letter-spacing: 0px;
+
+    word-spacing: 0px;
+
+    color: rgba(34, 34, 34, 1);
+
+}

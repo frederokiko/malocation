@@ -1,1 +1,62 @@
-<p>maison works!</p>
+<p-button label="Voir tout" (click)="getall()" severity="help"></p-button>
+<p-button label="Maison" (click)="getallmai()" severity="help"></p-button>
+<p-button label="Appartement" (click)="getallapp()" severity="help"></p-button>
+Min : <input type="number" [(ngModel)]="min">
+Max : <input type="number" [(ngModel)]="max">
+<p-button label="Par prix" (click)="getallprix()" severity="help"></p-button>
+CP : <input type="number" [(ngModel)]="cp">
+<p-button label="Par codepostal" (click)="getallcp()" severity="help"></p-button>
+<div class="container">
+    <div class="column">
+        <div *ngFor="let bi of listbien">
+            <p>N° : {{ bi.id_bien }}</p>
+
+            <p>Rue : {{ bi.rue }}</p>
+            <p>Numéro : {{ bi.numero }}</p>
+            <p>Code Postal : {{ bi.codepostal }}</p>
+            <p>Localité : {{ bi.localite }}</p>
+            <p>Caution : {{ bi.caution_montant }} €</p>
+            <p>Prix de Location : {{ bi.location_prix }} €</p>
+            <p>Caution : {{ bi.caution_txt }}</p>
+            <p>Disponible : {{ bi.disponible }}</p>
+            <!-- <p>Est Loué : {{ bi.est_louer }}</p> -->
+            <!-- <p>Est Validé : {{ bi.est_valider }}</p> -->
+            <!-- <p>ID du Propriétaire : {{ bi.id_proprietaire }}</p> -->
+            
+            <p-button label="détail" (click)="getbatidbien(bi.id_bien)"  severity="help"></p-button>
+          </div>
+    </div>
+    <div class="column">
+      <div *ngIf="batiment">
+        <p *ngIf="batiment.type_maison===true">Maison </p>
+        <p *ngIf="batiment.type_appartement===true">Appartement </p>
+        <p *ngIf="batiment.chaufage_central===true">Chauffage central </p>
+        <p *ngIf="batiment.charge_comprise===true">Charge comprise </p>
+        <p-button label="details" (click)="getpiece(batiment.id_batiment)"  severity="help"></p-button>
+      </div>
+      
+        <div *ngFor="let ba of listbatiment">
+            <p *ngIf="ba.type_maison===true">Maison </p>
+            <p *ngIf="ba.type_appartement===true">Appartement </p>
+            <p *ngIf="ba.chaufage_central===true">Chauffage central </p>
+            <p *ngIf="ba.charge_comprise===true">Charge comprise </p>
+           
+            <p-button label="details" (click)="getbien(ba.id_bien);getpiece(ba.id_batiment)"  severity="help"></p-button>
+        </div>
+    </div>
+    <div class="column">
+        <div *ngFor="let pi of listpiece">
+            <div *ngFor="let gen of listgenre_piece">
+              <p *ngIf="pi.id_genre === gen.id_genre"> {{gen.nom}} </p>           
+            </div>
+            <a>{{pi.commentaire}}</a>
+            <p>L : {{pi.longueur}} m X  l : {{pi.largeur}} m = {{pi.surface}} m²</p>
+            <p-button label="photos" (click)="getphoto()"  severity="help"></p-button><hr>
+          </div>
+    </div>
+    <div class="column">
+        <h2>{{photo}}</h2>
+    </div>
+  </div>
+
+

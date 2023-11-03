@@ -12,6 +12,6 @@
   <a *ngIf="isConnected">
     <a id="connect">Vous êtes bien connecté</a>
     <p-button (click)="logout()" styleClass="p-button-sm p-button-text">Déconnexion</p-button>
-    <p-button  routerLink="../personne" styleClass="p-button-secondary p-button-text">Afficher la liste des membres</p-button>  
+    <p-button *ngIf="role==='Admin'" routerLink="../personne" styleClass="p-button-secondary p-button-text">Afficher la liste des membres</p-button>  
   </a>
  <hr>
